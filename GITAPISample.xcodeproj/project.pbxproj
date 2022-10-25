@@ -29,6 +29,7 @@
 		AA76CE30290854E6005481AA /* GitHubParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76CE2F290854E6005481AA /* GitHubParser.swift */; };
 		AA76CE3229086079005481AA /* GITAPISample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA165B012905C99C00F939A3 /* GITAPISample.framework */; };
 		AA76CE3329086079005481AA /* GITAPISample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA165B012905C99C00F939A3 /* GITAPISample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA76CE3C2908736E005481AA /* CheckRepoParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = AA76CE3B2908736E005481AA /* CheckRepoParsing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,9 @@
 		AA165B612905DA2100F939A3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		AA76CE2C29084963005481AA /* APIConstrants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstrants.swift; sourceTree = "<group>"; };
 		AA76CE2F290854E6005481AA /* GitHubParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubParser.swift; sourceTree = "<group>"; };
+		AA76CE392908736E005481AA /* TestingApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestingApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA76CE3A2908736E005481AA /* CheckRepoParsing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckRepoParsing.h; sourceTree = "<group>"; };
+		AA76CE3B2908736E005481AA /* CheckRepoParsing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckRepoParsing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,9 @@
 				AA165B2A2905CAE000F939A3 /* Assets.xcassets */,
 				AA165B2C2905CAE000F939A3 /* LaunchScreen.storyboard */,
 				AA165B2F2905CAE000F939A3 /* Info.plist */,
+				AA76CE3A2908736E005481AA /* CheckRepoParsing.h */,
+				AA76CE3B2908736E005481AA /* CheckRepoParsing.m */,
+				AA76CE392908736E005481AA /* TestingApp-Bridging-Header.h */,
 			);
 			path = TestingApp;
 			sourceTree = "<group>";
@@ -377,6 +384,7 @@
 					};
 					AA165B1E2905CADE00F939A3 = {
 						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
 					};
 					AA165B332905CAE100F939A3 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -470,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA165B262905CADE00F939A3 /* ViewController.swift in Sources */,
+				AA76CE3C2908736E005481AA /* CheckRepoParsing.m in Sources */,
 				AA165B222905CADE00F939A3 /* AppDelegate.swift in Sources */,
 				AA165B242905CADE00F939A3 /* SceneDelegate.swift in Sources */,
 			);
@@ -738,6 +747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -755,6 +765,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rasmiranjan20.TestingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestingApp/TestingApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -765,6 +777,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -782,6 +795,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rasmiranjan20.TestingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestingApp/TestingApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

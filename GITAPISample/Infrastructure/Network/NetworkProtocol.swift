@@ -7,8 +7,6 @@
 
 import Foundation
 
-//typealias ResponseHandler = (data: Data?, response: URLResponse?, error: NetworkErrors?)
-
 protocol ParserProtocol {
     func parseData(_ data: Data) -> Result<Any, Error>
 }
@@ -31,8 +29,7 @@ protocol NetworkSessionProtocol {
 final class DefaultSession : NetworkSessionProtocol {
     func request(_ request: URLRequest) async -> Result<Data, NetworkErrors> {
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            print("data::\(data.count), response::\(response)")
+            let (data, _) = try await URLSession.shared.data(for: request)
             return .success(data)
         } catch {
             return .failure(.defaultError(error))

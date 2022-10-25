@@ -1,24 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rakutentech" borderStyle="roundedRect" placeholder="Company Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zWx-pL-ahM">
+                                <rect key="frame" x="20" y="57" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L4O-vk-ZMd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="android" borderStyle="roundedRect" placeholder="Platform" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jH0-BV-1cW">
+                                <rect key="frame" x="20" y="107" width="350" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-mo-r3m">
+                                <rect key="frame" x="141" y="157" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="C5o-GT-HkV"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qgb-j1-93E"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Fetch Repo"/>
+                                <connections>
+                                    <action selector="buttonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="etU-cD-bfs"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-40-dhK">
+                                <rect key="frame" x="20" y="161.66666666666666" width="101" height="32"/>
+                                <segments>
+                                    <segment title="Swift"/>
+                                    <segment title="ObjC"/>
+                                </segments>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yvB-KJ-gwC">
+                                <rect key="frame" x="5" y="207" width="380" height="598"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jH0-BV-1cW" firstAttribute="top" secondItem="zWx-pL-ahM" secondAttribute="bottom" constant="10" id="63n-SF-uot"/>
+                            <constraint firstItem="zWx-pL-ahM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="EDl-WQ-75F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yvB-KJ-gwC" secondAttribute="bottom" constant="5" id="FhP-cT-oyZ"/>
+                            <constraint firstItem="SJc-mo-r3m" firstAttribute="top" secondItem="jH0-BV-1cW" secondAttribute="bottom" constant="10" id="M9x-fd-nXC"/>
+                            <constraint firstItem="jH0-BV-1cW" firstAttribute="trailing" secondItem="zWx-pL-ahM" secondAttribute="trailing" id="Qr8-pA-zdX"/>
+                            <constraint firstItem="SJc-mo-r3m" firstAttribute="centerY" secondItem="AtT-40-dhK" secondAttribute="centerY" id="SLW-1v-wIi"/>
+                            <constraint firstItem="zWx-pL-ahM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uf7-J3-8Jr"/>
+                            <constraint firstItem="jH0-BV-1cW" firstAttribute="leading" secondItem="zWx-pL-ahM" secondAttribute="leading" id="VGU-PI-CbD"/>
+                            <constraint firstItem="AtT-40-dhK" firstAttribute="leading" secondItem="zWx-pL-ahM" secondAttribute="leading" id="VhP-wo-obt"/>
+                            <constraint firstItem="yvB-KJ-gwC" firstAttribute="top" secondItem="SJc-mo-r3m" secondAttribute="bottom" constant="10" id="bdi-8H-FnG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWx-pL-ahM" secondAttribute="trailing" constant="20" id="iDJ-4J-uVo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SJc-mo-r3m" secondAttribute="trailing" symbolic="YES" id="mO3-is-GEp"/>
+                            <constraint firstItem="SJc-mo-r3m" firstAttribute="leading" secondItem="AtT-40-dhK" secondAttribute="trailing" constant="20" id="mmc-ts-FYe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yvB-KJ-gwC" secondAttribute="trailing" constant="5" id="sqa-FO-WbS"/>
+                            <constraint firstItem="yvB-KJ-gwC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="tAs-fp-np2"/>
+                            <constraint firstItem="jH0-BV-1cW" firstAttribute="height" secondItem="zWx-pL-ahM" secondAttribute="height" id="w3T-Ht-M3c"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonFetch" destination="SJc-mo-r3m" id="ebe-ud-MZY"/>
+                        <outlet property="segment" destination="AtT-40-dhK" id="BQY-f7-tRh"/>
+                        <outlet property="textCompanyName" destination="zWx-pL-ahM" id="gLq-7e-cbB"/>
+                        <outlet property="textPlatform" destination="jH0-BV-1cW" id="aRP-Sy-qJX"/>
+                        <outlet property="textVLogs" destination="yvB-KJ-gwC" id="bQl-MV-cb6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="75" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
