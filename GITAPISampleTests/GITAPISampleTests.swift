@@ -18,9 +18,10 @@ final class GITAPISampleTests: XCTestCase {
                let repos = try await GitHubService.getRepoList(platform: platform, companyName: companyName)
                 XCTAssertTrue(repos.count > 0, "Repos data empty")
                 if let repo = repos.first {
-                    XCTAssertTrue(repo.reponame.count > 0, "reponame data is not coming.")
-                    XCTAssertTrue(repo.repoDescription.count > 0, "repoDescription data is not coming.")
-                    XCTAssertTrue(repo.language.count > 0, "language data is not coming.")
+                    XCTAssertNotNil(repo.description, "description data is not coming.")
+                    XCTAssertNotNil(repo.reponame, "reponame data is not coming.")
+                    XCTAssertNotNil(repo.repoDescription, "repoDescription data is not coming.")
+                    XCTAssertNotNil(repo.language, "language data is not coming.")
                 }
                 validData.fulfill()
             } catch {
@@ -37,9 +38,9 @@ final class GITAPISampleTests: XCTestCase {
                let repos = try await GitHubService.getRepoList(platform: platform, companyName: companyName)
                 XCTAssertTrue(repos.count > 0, "Repos data empty")
                 if let repo = repos.first {
-                    XCTAssertTrue(repo.reponame.count > 0, "reponame data is not coming.")
-                    XCTAssertTrue(repo.repoDescription.count > 0, "repoDescription data is not coming.")
-                    XCTAssertTrue(repo.language.count > 0, "language data is not coming.")
+                    XCTAssertNotNil(repo.reponame, "reponame data is not coming.")
+                    XCTAssertNotNil(repo.repoDescription, "repoDescription data is not coming.")
+                    XCTAssertNotNil(repo.language, "language data is not coming.")
                 }
                 invalidOrg.fulfill()
             } catch {
@@ -56,9 +57,9 @@ final class GITAPISampleTests: XCTestCase {
                let repos = try await GitHubService.getRepoList(platform: platform, companyName: companyName)
                 XCTAssertTrue(repos.count == 0, "Repos data empty")
                 if let repo = repos.first {
-                    XCTAssertTrue(repo.reponame.count > 0, "reponame data is not coming.")
-                    XCTAssertTrue(repo.repoDescription.count > 0, "repoDescription data is not coming.")
-                    XCTAssertTrue(repo.language.count > 0, "language data is not coming.")
+                    XCTAssertNotNil(repo.reponame, "reponame data is not coming.")
+                    XCTAssertNotNil(repo.repoDescription, "repoDescription data is not coming.")
+                    XCTAssertNotNil(repo.language, "language data is not coming.")
                 }
                 invalidPlatform.fulfill()
             } catch {

@@ -12,7 +12,7 @@ protocol WebserviceConfigureble {
     var requestTypes    : HTTPTypes {get}
     var parameters      : [String : String]? {get}
     var headers         : [String : String]? {get}
-    var request         : URLRequest? {get}
+    var request         : URLRequest {get}
 }
 
 struct WebserviceConfigure : WebserviceConfigureble {
@@ -31,7 +31,7 @@ struct WebserviceConfigure : WebserviceConfigureble {
         self.timeOut = timeOut
     }
     
-    var request : URLRequest? {
+    var request : URLRequest {
         var req = URLRequest(url: url)
         req.httpMethod = requestTypes.rawValue
         if let parameters, let param = try? JSONEncoder().encode(parameters) {

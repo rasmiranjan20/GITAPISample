@@ -8,7 +8,8 @@
 import Foundation
 
 final class GitHubParser : ParserProtocol {
-    func parseData(_ data: Data) -> Result<Any, Error> {
+    typealias T = [Repository]
+    func parseData(_ data: Data) -> Result<[Repository], Error> {
         do {
             let values = try serializeData(data)
             let result = parseRepo(values)
@@ -40,11 +41,11 @@ extension GitHubParser {
 
         let repos = items.map({
             let repo = Repository()
-            repo.repoid    = $0["id"] as? Int ?? 0
-            repo.language  = $0["language"] as? String ?? ""
-            repo.reponame  = $0["name"] as? String ?? ""
-            repo.isPrivate = $0["private"] as? Bool ?? false
-            repo.repoDescription  = $0["description"] as? String ?? ""
+            repo.repoid    = $0["id"] as? Int
+            repo.language  = $0["language"] as? String
+            repo.reponame  = $0["name"] as? String
+            repo.isPrivate = $0["private"] as? Bool
+            repo.repoDescription  = $0["description"] as? String
             return repo
         })
         return .success(repos)

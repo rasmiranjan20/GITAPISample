@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ParserProtocol {
-    func parseData(_ data: Data) -> Result<Any, Error>
+    associatedtype T
+    func parseData(_ data: Data) -> Result<T, Error>
 }
 
 extension ParserProtocol {
@@ -40,14 +41,11 @@ struct DefaultSession : NetworkSessionProtocol {
 
 protocol NetworkProtocol {
     func apiRequest<T : Decodable>(_ configuration: WebserviceConfigureble, session: NetworkSessionProtocol) async throws -> T
-    func apiRequest(_ configuration: WebserviceConfigureble, session: NetworkSessionProtocol, parser:ParserProtocol) async throws -> Any
+    func apiRequest<P :ParserProtocol>(_ configuration: WebserviceConfigureble, session: NetworkSessionProtocol, parser:P) async throws -> P.T
 }
 
 extension NetworkProtocol {
     func configureURL(_ configuration: WebserviceConfigureble, session: NetworkSessionProtocol = DefaultSession()) async throws -> Result<Data, NetworkErrors> {
-        guard let request = configuration.request else {
-            throw NetworkErrors.urlError
-        }
-        return await session.request(request)
+        return await session.request(configuration.request)
     }
 }

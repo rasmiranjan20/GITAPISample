@@ -17,9 +17,6 @@ import Foundation
         let configure = WebserviceConfigure(url: url, requestTypes: .GET)
         do {
             let repo = try await NetworkService().apiRequest(configure, parser: GitHubParser())
-            guard let repo = repo as? [Repository] else {
-                throw NetworkErrors.parsingError
-            }
             return repo
         } catch {
             throw error

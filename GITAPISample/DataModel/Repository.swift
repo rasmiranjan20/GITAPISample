@@ -8,15 +8,15 @@
 import Foundation
 
 @objc public class Repository : NSObject {
-    var repoid          = 0
-    var reponame        = ""
-    var repoDescription = ""
-    var language        = ""
-    var isPrivate       = false
+    var repoid          : Int?
+    var reponame        : String?
+    var repoDescription : String?
+    var language        : String?
+    var isPrivate       : Bool?
 }
 
 extension Repository {
     public override var description: String {
-        return "repoid = \(repoid), language = \(language), reponame = \(reponame), isPrivate = \(isPrivate)\n"
+        return "repoid = \(String(describing:repoid)), language = \(String(describing:language)), reponame = \(String(describing:reponame)), isPrivate = \(String(describing: isPrivate))\n"
     }
 }

@@ -37,6 +37,8 @@
 		AA8CD61E2909996A001D879A /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CD61D2909996A001D879A /* NetworkServiceTests.swift */; };
 		AA8CD6202909A016001D879A /* repo_invalid in Resources */ = {isa = PBXBuildFile; fileRef = AA8CD61F2909A016001D879A /* repo_invalid */; };
 		AA8CD6222909A05F001D879A /* NetworkProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CD6212909A05F001D879A /* NetworkProtocolTests.swift */; };
+		AA8CD6242909B83A001D879A /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CD6232909B83A001D879A /* RepositoryMock.swift */; };
+		AA8CD6262909BCF6001D879A /* GitHubParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CD6252909BCF6001D879A /* GitHubParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		AA8CD61D2909996A001D879A /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		AA8CD61F2909A016001D879A /* repo_invalid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repo_invalid; sourceTree = "<group>"; };
 		AA8CD6212909A05F001D879A /* NetworkProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocolTests.swift; sourceTree = "<group>"; };
+		AA8CD6232909B83A001D879A /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
+		AA8CD6252909BCF6001D879A /* GitHubParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,10 +194,12 @@
 			isa = PBXGroup;
 			children = (
 				AA165B102905C99C00F939A3 /* GITAPISampleTests.swift */,
-				AA8CD61B29098E1A001D879A /* NetworkSessionMock.swift */,
 				AA8CD61D2909996A001D879A /* NetworkServiceTests.swift */,
 				AA8CD6212909A05F001D879A /* NetworkProtocolTests.swift */,
 				AA8CD61129098B79001D879A /* Resources */,
+				AA8CD61B29098E1A001D879A /* NetworkSessionMock.swift */,
+				AA8CD6232909B83A001D879A /* RepositoryMock.swift */,
+				AA8CD6252909BCF6001D879A /* GitHubParserTests.swift */,
 			);
 			path = GITAPISampleTests;
 			sourceTree = "<group>";
@@ -513,7 +519,9 @@
 				AA8CD6222909A05F001D879A /* NetworkProtocolTests.swift in Sources */,
 				AA165B112905C99C00F939A3 /* GITAPISampleTests.swift in Sources */,
 				AA8CD61E2909996A001D879A /* NetworkServiceTests.swift in Sources */,
+				AA8CD6242909B83A001D879A /* RepositoryMock.swift in Sources */,
 				AA8CD61C29098E1A001D879A /* NetworkSessionMock.swift in Sources */,
+				AA8CD6262909BCF6001D879A /* GitHubParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

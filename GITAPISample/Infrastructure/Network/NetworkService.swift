@@ -9,7 +9,7 @@ import Foundation
 
 final class NetworkService : NetworkProtocol {
     
-    func apiRequest(_ configuration: WebserviceConfigureble, session: NetworkSessionProtocol = DefaultSession(), parser: ParserProtocol) async throws -> Any {
+    func apiRequest<P :ParserProtocol>(_ configuration: WebserviceConfigureble, session: NetworkSessionProtocol = DefaultSession(), parser: P) async throws -> P.T {
         do {
            let response = try await configureURL(configuration, session: session)
             switch response {
