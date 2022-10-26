@@ -26,7 +26,7 @@ protocol NetworkSessionProtocol {
     func request(_ request: URLRequest) async -> Result<Data, NetworkErrors>
 }
 
-final class DefaultSession : NetworkSessionProtocol {
+struct DefaultSession : NetworkSessionProtocol {
     func request(_ request: URLRequest) async -> Result<Data, NetworkErrors> {
         do {
             let (data, _) = try await URLSession.shared.data(for: request)

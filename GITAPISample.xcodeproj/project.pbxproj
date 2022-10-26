@@ -30,6 +30,13 @@
 		AA76CE3229086079005481AA /* GITAPISample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA165B012905C99C00F939A3 /* GITAPISample.framework */; };
 		AA76CE3329086079005481AA /* GITAPISample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA165B012905C99C00F939A3 /* GITAPISample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA76CE3C2908736E005481AA /* CheckRepoParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = AA76CE3B2908736E005481AA /* CheckRepoParsing.m */; };
+		AA8CD61629098B8F001D879A /* repo_available in Resources */ = {isa = PBXBuildFile; fileRef = AA8CD61329098B8E001D879A /* repo_available */; };
+		AA8CD61729098B8F001D879A /* repo_error in Resources */ = {isa = PBXBuildFile; fileRef = AA8CD61429098B8E001D879A /* repo_error */; };
+		AA8CD61829098B8F001D879A /* repo_empty in Resources */ = {isa = PBXBuildFile; fileRef = AA8CD61529098B8E001D879A /* repo_empty */; };
+		AA8CD61C29098E1A001D879A /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CD61B29098E1A001D879A /* NetworkSessionMock.swift */; };
+		AA8CD61E2909996A001D879A /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CD61D2909996A001D879A /* NetworkServiceTests.swift */; };
+		AA8CD6202909A016001D879A /* repo_invalid in Resources */ = {isa = PBXBuildFile; fileRef = AA8CD61F2909A016001D879A /* repo_invalid */; };
+		AA8CD6222909A05F001D879A /* NetworkProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CD6212909A05F001D879A /* NetworkProtocolTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +105,13 @@
 		AA76CE392908736E005481AA /* TestingApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestingApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA76CE3A2908736E005481AA /* CheckRepoParsing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckRepoParsing.h; sourceTree = "<group>"; };
 		AA76CE3B2908736E005481AA /* CheckRepoParsing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckRepoParsing.m; sourceTree = "<group>"; };
+		AA8CD61329098B8E001D879A /* repo_available */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repo_available; sourceTree = "<group>"; };
+		AA8CD61429098B8E001D879A /* repo_error */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repo_error; sourceTree = "<group>"; };
+		AA8CD61529098B8E001D879A /* repo_empty */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repo_empty; sourceTree = "<group>"; };
+		AA8CD61B29098E1A001D879A /* NetworkSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
+		AA8CD61D2909996A001D879A /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		AA8CD61F2909A016001D879A /* repo_invalid */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repo_invalid; sourceTree = "<group>"; };
+		AA8CD6212909A05F001D879A /* NetworkProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocolTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				AA165B102905C99C00F939A3 /* GITAPISampleTests.swift */,
+				AA8CD61B29098E1A001D879A /* NetworkSessionMock.swift */,
+				AA8CD61D2909996A001D879A /* NetworkServiceTests.swift */,
+				AA8CD6212909A05F001D879A /* NetworkProtocolTests.swift */,
+				AA8CD61129098B79001D879A /* Resources */,
 			);
 			path = GITAPISampleTests;
 			sourceTree = "<group>";
@@ -277,6 +295,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA8CD61129098B79001D879A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA8CD61229098B79001D879A /* MockData */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA8CD61229098B79001D879A /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				AA8CD61329098B8E001D879A /* repo_available */,
+				AA8CD61529098B8E001D879A /* repo_empty */,
+				AA8CD61429098B8E001D879A /* repo_error */,
+				AA8CD61F2909A016001D879A /* repo_invalid */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +462,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8CD6202909A016001D879A /* repo_invalid in Resources */,
+				AA8CD61629098B8F001D879A /* repo_available in Resources */,
+				AA8CD61829098B8F001D879A /* repo_empty in Resources */,
+				AA8CD61729098B8F001D879A /* repo_error in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +510,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8CD6222909A05F001D879A /* NetworkProtocolTests.swift in Sources */,
 				AA165B112905C99C00F939A3 /* GITAPISampleTests.swift in Sources */,
+				AA8CD61E2909996A001D879A /* NetworkServiceTests.swift in Sources */,
+				AA8CD61C29098E1A001D879A /* NetworkSessionMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,12 @@ import Foundation
 
 @objc public class GitHubService : NSObject {
     @objc public class func getRepoList(platform: String, companyName: String) async throws -> [Repository] {
-        let api = String(format: GITHUBRepoSearch, platform, companyName)
-        let url = URL(string: api)
-        let configure = WebserviceConfigure(url: url!, requestTypes: .GET)
+        var api : String? = String(format: GITHUBRepoSearch, platform, companyName)
+        api = api?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        guard let api = api, let url = URL(string: api) else {
+            throw NetworkErrors.urlError
+        }
+        let configure = WebserviceConfigure(url: url, requestTypes: .GET)
         do {
             let repo = try await NetworkService().apiRequest(configure, parser: GitHubParser())
             guard let repo = repo as? [Repository] else {

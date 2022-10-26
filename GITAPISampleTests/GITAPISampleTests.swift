@@ -9,7 +9,77 @@ import XCTest
 @testable import GITAPISample
 
 final class GITAPISampleTests: XCTestCase {
+    
+    func testGitHubServiceWithValidData() async {
+            let validData   = self.expectation(description: "validData")
+            let platform    = "android"
+            let companyName = "rakutentech"
+            do {
+               let repos = try await GitHubService.getRepoList(platform: platform, companyName: companyName)
+                XCTAssertTrue(repos.count > 0, "Repos data empty")
+                if let repo = repos.first {
+                    XCTAssertTrue(repo.reponame.count > 0, "reponame data is not coming.")
+                    XCTAssertTrue(repo.repoDescription.count > 0, "repoDescription data is not coming.")
+                    XCTAssertTrue(repo.language.count > 0, "language data is not coming.")
+                }
+                validData.fulfill()
+            } catch {
+                validData.fulfill()
+            }
+            self.wait(for: [validData], timeout: 40)
+    }
+    
+    func testGitHubServiceWithInvalidOrg() async {
+            let invalidOrg      = self.expectation(description: "invalidOrg")
+            let platform    = "android"
+            let companyName = "rakutentech1"
+            do {
+               let repos = try await GitHubService.getRepoList(platform: platform, companyName: companyName)
+                XCTAssertTrue(repos.count > 0, "Repos data empty")
+                if let repo = repos.first {
+                    XCTAssertTrue(repo.reponame.count > 0, "reponame data is not coming.")
+                    XCTAssertTrue(repo.repoDescription.count > 0, "repoDescription data is not coming.")
+                    XCTAssertTrue(repo.language.count > 0, "language data is not coming.")
+                }
+                invalidOrg.fulfill()
+            } catch {
+                invalidOrg.fulfill()
+            }
+            self.wait(for: [invalidOrg], timeout: 40)
+    }
 
+    func testGitHubServiceWithInvalidPlatform() async {
+            let invalidPlatform = self.expectation(description: "invalidPlatform")
+            let platform    = "android1"
+            let companyName = "rakutentech"
+            do {
+               let repos = try await GitHubService.getRepoList(platform: platform, companyName: companyName)
+                XCTAssertTrue(repos.count == 0, "Repos data empty")
+                if let repo = repos.first {
+                    XCTAssertTrue(repo.reponame.count > 0, "reponame data is not coming.")
+                    XCTAssertTrue(repo.repoDescription.count > 0, "repoDescription data is not coming.")
+                    XCTAssertTrue(repo.language.count > 0, "language data is not coming.")
+                }
+                invalidPlatform.fulfill()
+            } catch {
+                invalidPlatform.fulfill()
+            }
+        self.wait(for: [invalidPlatform], timeout: 40)
+    }
+    
+    func testGitHubServiceWithInvalidInput() async {
+            let invalidInput = self.expectation(description: "invalidInput")
+            let platform    = "android1"
+            let companyName = "rakuten😁tech"
+            do {
+               let _ = try await GitHubService.getRepoList(platform: platform, companyName: companyName)
+                
+            } catch {
+                invalidInput.fulfill()
+            }
+        self.wait(for: [invalidInput], timeout: 40)
+    }
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

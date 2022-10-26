@@ -37,18 +37,16 @@ extension GitHubParser {
         guard let items = values["items"] as? [[String : Any]] else {
             return .failure(NetworkErrors.parsingError)
         }
-        
-        var repos = [Repository]()
-        items.forEach { item in
+
+        let repos = items.map({
             let repo = Repository()
-            repo.repoid    = item["id"] as? Int ?? 0
-            repo.language  = item["language"] as? String ?? ""
-            repo.reponame  = item["name"] as? String ?? ""
-            repo.isPrivate = item["private"] as? Bool ?? false
-            repo.repoDescription  = item["description"] as? String ?? ""
-            repos.append(repo)
-        }
-        
+            repo.repoid    = $0["id"] as? Int ?? 0
+            repo.language  = $0["language"] as? String ?? ""
+            repo.reponame  = $0["name"] as? String ?? ""
+            repo.isPrivate = $0["private"] as? Bool ?? false
+            repo.repoDescription  = $0["description"] as? String ?? ""
+            return repo
+        })
         return .success(repos)
     }
 }
