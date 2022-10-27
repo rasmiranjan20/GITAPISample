@@ -1,0 +1,24 @@
+{
+  "name": "GITAPISample",
+  "version": "1.0.0",
+  "summary": "GITAPISample library providing APIs to retrive the gihub repository list.",
+  "homepage": "https://github.com/rasmiranjan20/GITAPISample.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Rasmiranjan Sahu": "rasmiranjan20@.com"
+  },
+  "requires_arc": true,
+  "swift_versions": "5.0",
+  "platforms": {
+    "ios": "14.0",
+  },
+  "source": {
+    "git": "https://github.com/rasmiranjan20/GITAPISample.git",
+    "tag": "1.0.0"
+  },
+  "source_files": "GITAPISample/**/*.swift",
+  "swift_version": "5.0"
+}
