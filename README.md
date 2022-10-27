@@ -20,3 +20,8 @@ Xcode 14 Required for run this project.
 Application developed in Swift 5.
 Application deployment target is 14.0
 Update the pod before run the project(Open project location in terminal run 'pod update' in terminal).
+
+Implementation:
+_________________________________
+Use cocoapods to integrate this GITAPISample library.
+Add GITAPISample in your podfile and provide https://github.com/rasmiranjan20/RasmiranjanSpecs as souce of pod
